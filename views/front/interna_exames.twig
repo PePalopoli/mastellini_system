@@ -1,0 +1,69 @@
+{% set menu_selectd = "exames" %}
+{% extends 'front/layout.twig' %}
+
+{% block content %}
+
+
+
+<section class="interna-exames" data-scroll-index='1'>
+        <div class="secao-interna-exames">
+            <div class="container">
+                <div class="row">
+                    <div class="cabecalho-interna-exames">
+                        <div class="col-md-12 col-lg-12 col-12 titulo-todos-exames">
+                            <h2>{{exame.title |upper}}</h2>
+                        </div>                        
+                    </div>
+                    <div class="secao-exames-interna-exibicao">
+                        <div class="col-md-9 col-lg-9 col-12 exames-exibicao-lista">
+                            
+                            <div class="titulo-orientacoes">
+                                <p>Orientações</p>
+                            </div>
+                            <div class="conteudo-orientacoes">
+                                {{exame.orientacoes |raw}}
+                            </div>
+
+                            <div class="titulo-orientacoes">
+                                <p>Observações</p>
+                            </div>
+                            <div class="conteudo-orientacoes">
+                                {{exame.observacoes |raw}}
+                            </div>
+                            
+
+
+                            
+                        </div>
+                        <div class="col-md-3 col-lg-3 col-12 div-box-descricao-posicao">
+                            <div class="box-descricao-interna-exames">
+                                <div class="div-descricao-interna-exames">
+                                    <p>Cobertura de Convênios</p>
+                                </div>
+                                <div class="div-subdescricao-interna-exames">
+                                    <p>Para informações sobre a cobertura do convênio, consulte nossa Central de Atendimento pelo WhatsApp.</p>
+                                </div>
+
+                                <div class="div-descricao-interna-exames">
+                                    <p>Preços e Pagamento Particular</p>
+                                </div>
+                                <div class="div-subdescricao-interna-exames">
+                                    <p>Você sabia que o Laboratório Mastellini oferece parcelamento em até 10x sem juros e condições especiais para pagamento particular?</p>
+                                </div>
+                                
+                                <div class="div-botao-descricao-interna-exames">                                    
+                                    <a href="">Enviar mensagem</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+<div class="div-unidades-interna-exames">
+    {% include 'sections/unidades.twig' %}
+</div>
+
+
+{% endblock %}

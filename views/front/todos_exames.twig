@@ -1,0 +1,168 @@
+{% set menu_selectd = "exames" %}
+{% extends 'front/layout.twig' %}
+
+{% block content %}
+
+
+
+
+
+
+<section class="todos-exames" data-scroll-index='1'>
+        <div class="secao-todos-exames">
+            <div class="container">
+                <div class="row">
+                    <div class="cabecalho-todos-exames">
+                        <div class="col-md-6 col-lg-6 col-12 titulo-todos-exames">
+                            <h2>Exames mais procurados
+                            no Laboratório Mastellini</h2>
+                        </div>
+                        <div class="col-md-6 col-lg-6 col-12 subtitulo-todos-exames">
+                            <p>Exames de Análises Clínicas sem burocracia e no momento que você precisar</p>
+                        </div>
+                    </div>
+                    <div class="secao-exames-exibicao">
+                        <div class="col-md-9 col-lg-9 col-12 exames-exibicao-lista">
+                            
+                            <div class="col-md-6 col-lg-6 col-12 posicao-cada-exame">
+                                <div class="cada-exame-box">
+                                    <a href="{{path('web_interna_exame',{'url_exame':'beta-hcg-qualitativo-hcg'})}}"><p>Beta HCG Qualitativo (Hcg)</p></a>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-6 col-12 posicao-cada-exame">
+                                <div class="cada-exame-box">
+                                    <a href="{{path('web_interna_exame',{'url_exame':'beta-hcg-quantitativo-beq'})}}"><p>Beta HCG Quantitativo (Beq)</p></a>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-4 col-lg-4 col-12 posicao-cada-exame">
+                                <div class="cada-exame-box">
+                                    <a href="{{path('web_interna_exame',{'url_exame':'colesterol-hdl'})}}"><p>Colesterol (HDL)</p></a>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-lg-4 col-12 posicao-cada-exame">
+                                <div class="cada-exame-box">
+                                    <a href="{{path('web_interna_exame',{'url_exame':'colesterol-ldl'})}}"><p>Colesterol (LDL)</p></a>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-lg-4 col-12 posicao-cada-exame">
+                                <div class="cada-exame-box">
+                                    <a href="{{path('web_interna_exame',{'url_exame':'colesterol-total-col'})}}"><p>Colesterol Total (Col)</p></a>
+                                </div>
+                            </div>
+
+                            
+
+
+                            <div class="col-md-3 col-lg-3 col-12 posicao-cada-exame">
+                                <div class="cada-exame-box">
+                                    <a href="{{path('web_interna_exame',{'url_exame':'covid-19-antigeno-tr-raspado-nasofaringe'})}}"><p>Covid-19</p></a>
+                                </div>
+                            </div>
+
+                            <div class="col-md-3 col-lg-3 col-12 posicao-cada-exame">
+                                <div class="cada-exame-box">
+                                    <a href="{{path('web_interna_exame',{'url_exame':'dengue'})}}"><p>Dengue</p></a>
+                                </div>
+                            </div>
+
+                            <div class="col-md-6 col-lg-6 col-12 posicao-cada-exame">
+                                <div class="cada-exame-box">
+                                    <a href="{{path('web_interna_exame',{'url_exame':'toxicologico'})}}"><p>Toxicológico</p></a>
+                                </div>
+                            </div>
+
+
+
+
+                            <div class="col-md-6 col-lg-6 col-12 posicao-cada-exame">
+                                <div class="cada-exame-box">
+                                    <a href="{{path('web_interna_exame',{'url_exame':'hemograma-completo-hem'})}}"><p>Hemograma Completo (Hem)</p></a>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-lg-4 col-12 posicao-cada-exame">
+                                <div class="cada-exame-box">
+                                    <a href="{{path('web_interna_exame',{'url_exame':'sexagem-fetal'})}}"><p>Sexagem Fetal</p></a>
+                                </div>
+                            </div>
+
+                            <div class="col-md-2 col-lg-2 col-12 posicao-cada-exame">
+                                <div class="cada-exame-box">
+                                    <a href="{{path('web_interna_exame',{'url_exame':'t4-livre'})}}"><p>T4 Livre</p></a>
+                                </div>
+                            </div>
+
+
+
+                            <div class="col-md-4 col-lg-4 col-12 posicao-cada-exame">
+                                <div class="cada-exame-box">
+                                    <a href="{{path('web_interna_exame',{'url_exame':'teste-de-dna'})}}"><p>Teste de DNA</p></a>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-lg-4 col-12 posicao-cada-exame">
+                                <div class="cada-exame-box">
+                                    <a href="{{path('web_interna_exame',{'url_exame':'teste-do-pezinho'})}}"><p>Teste do Pezinho</p></a>
+                                </div>
+                            </div>
+
+                            <div class="col-md-4 col-lg-4 col-12 posicao-cada-exame">
+                                <div class="cada-exame-box">
+                                    <a href="{{path('web_interna_exame',{'url_exame':'tsh-ultra-sensivel'})}}"><p>TSH Ultra Sensível</p></a>
+                                </div>
+                            </div>
+
+
+                            <div class="col-md-5 col-lg-5 col-12 posicao-cada-exame">
+                                <div class="cada-exame-box">
+                                    <a href="{{path('web_interna_exame',{'url_exame':'urina-simples-tipo-1'})}}"><p>Urina Simples (Tipo 1)</p></a>
+                                </div>
+                            </div>
+
+                            <div class="col-md-7 col-lg-7 col-12 posicao-cada-exame">
+                                <div class="cada-exame-box">
+                                    <a href="{{path('web_interna_exame',{'url_exame':'urocultura-com-antibiograma-uro'})}}"><p>Urocultura Com Antibiograma (Uro)</p></a>
+                                </div>
+                            </div>
+                            
+
+
+                            
+                        </div>
+                        <div class="col-md-3 col-lg-3 col-12 div-box-descricao-posicao">
+                            <div class="box-descricao-exames">
+                                <div class="div-descricao-exames">
+                                    <p>Não encontrou o exame que estava procurando?</p>
+                                </div>
+                                <div class="div-subdescricao-exames">
+                                    <p>Entre em contato através da Central de Atendimento pelo WhatsApp:</p>
+                                </div>
+                                <div class="div-telefone-descricao-exames">
+                                    <p>(18) 99735-5652</p>
+                                </div>
+                                <div class="div-botao-descricao-exames">                                    
+                                    <a href="https://wa.me/5518997355652" target="_blank">Enviar mensagem</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+
+{% include 'sections/uteis.twig' %}
+
+
+
+
+
+
+    
+
+{% endblock %}

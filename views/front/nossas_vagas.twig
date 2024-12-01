@@ -1,0 +1,159 @@
+{% set menu_selectd = "vagas" %}
+{% extends 'front/layout.twig' %}
+
+{% block content %}
+
+
+<section class="trabalhe-conosco" data-scroll-index='1'>
+    <div class="secao-interna-trabalhe-conosco">
+        <div class="container">
+            <div class="row">
+                <div class="cabecalho-interna-trabalhe-conosco">
+                    <div class="col-md-8 col-lg-8 col-12 titulo-trabalhe-conosco">
+                        <h2>Pesquise por vagas de emprego no <b>Laboratório Mastellini</b></h2>
+
+                        <p>Confira nossas vagas disponíveis e faça sua inscrição.</p>
+                    </div>
+                </div>
+
+                <div class="formulario-busca-vagas">
+                    <div class="row">
+                        <form enctype="multipart/form-data" method="post" action="{{path('web_procurar_vaga')}}" id="fBusca" name="fBusca">
+                            <div class="form-row">
+                                <div class="form-group col-md-4 col-lg-4 col-12">
+                                    <input type="text" class="form-control" id="iBusca" name="iBusca" placeholder="Digite uma palavra-chave">
+                                </div>
+                                <div class="form-group col-md-3 col-lg-3 col-12">
+                                    <select id="iArea" name="iArea" class="form-control">
+                                        <option selected value="0">Área</option>
+                                        <option value="0">Todas</option>
+                                        {% for item in areas %}
+                                            <option value="{{item.id}}">{{item.role|raw}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+
+                                <div class="form-group col-md-3 col-lg-3 col-12">
+                                    <select id="iCidade" name="iCidade" class="form-control">
+                                        <option selected value="0">Cidade</option>
+                                        <option value="0">Todas</option>
+                                        {% for item in unidades %}
+                                            <option value="{{item.id}}">{{item.title|raw}}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+
+                                <div class="form-group col-md-2 col-lg-2 col-12">
+                                    <button type="submit" class="btn btn-primary">Buscar</button>                                    
+                                </div>
+
+                        </form>
+                    </div>
+                </div>
+
+
+                <div class="lista-vagas-abertas">
+
+                    {% for vaga in vagas %}                        
+                    
+                        <div class="div-box-cada-vaga">
+                            <div class="col-md-2 col-lg-2 col-12 descricao-vaga">
+                                <h2>{{vaga.vaga|raw}}</h2>
+                            </div>
+                            <div class="col-md-1 col-lg-1 col-12 separador-vagas"></div>
+                            <div class="col-md-9 col-lg-9 col-12 descricao-conteudo-vaga">
+                                <p>
+                                    <b>Data da publicação:</b> {{vaga.created_at|date('d/m/Y') }} <br>
+                                    <b>Área:</b> {{vaga.area|raw }} <br>
+                                    <b>Unidade:</b> {{vaga.unidade|raw }} <br>
+                                
+                                    <b>Breve descrição da vaga:</b> 
+                                </p>
+                                    {{vaga.body|raw}}
+                                <div class="col-md-2 col-lg-2 col-12 botao-vaga">
+                                    <a href="{{path('web_interna_vaga',{'url_vaga':vaga.url})}}">Inscreva-se</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    {% endfor %}
+
+
+                    
+
+
+                </div>
+
+                <div class="cabecalho-interna-trabalhe-conosco bloco-formulario2">
+                    <div class="col-md-6 col-lg-6 col-12 titulo-trabalhe-conosco">
+                        <h2>Não achou a sua vaga?</b></h2>
+
+                        <p>O Grupo Mastellini está sempre em busca de talentos para o seu time. Se você tem interesse em fazer parte da nossa equipe, preencha seus dados no formulário abaixo e envie para participar dos nossos processos seletivos.</p>
+                    </div>
+                </div>
+
+
+                <div class="div-formulario-busca-vaga">
+                    <form action="{{path('web_nossas_vagas_send')}}" method="post" enctype="multipart/form-data">
+                        <div class="form-row">
+                            <div class="form-group col-md-5 col-lg-5 col-12">
+                                <label for="iName">Nome:<span>*</span></label>
+                                <input type="text" class="form-control" id="iName" name="iName">
+                            </div>
+
+                            <div class="form-group col-md-3 col-lg-3 col-12">
+                                <label for="iTelefone">Telefone/Celular:<span>*</span></label>
+                                <input type="text" class="form-control" id="iTelefone" name="iTelefone">
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4 col-12">
+                                <label for="iEmail">Email:<span>*</span></label>
+                                <input type="text" class="form-control" id="iEmail" name="iEmail">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-2 col-lg-2 col-12">
+                                <label for="iEstado">Estado:<span>*</span></label>
+                                <select id="iEstado" name="iEstado"  class="form-control">
+                                    <option selected value="SP">SP</option>
+                                    <option value="ES">ES</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4 col-12">
+                                <label for="iCidade">Cidade:<span>*</span></label>
+                                <input type="text" class="form-control" id="iCidade" name="iCidade">
+                            </div>
+                            <div class="form-group col-md-6 col-lg-6 col-12">
+                                <label for="iFile">Curriculo<span>*</span></label>
+                                <input class="form-control" type="file" id="iFile" name="iFile">
+                            </div>
+
+
+
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-12 col-lg-12 col-12">
+                                <label for="iMsg">Mensagem:<span>*</span></label>
+                                <textarea class="form-control" id="iMsg" name="iMsg" rows="10"></textarea>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Enviar mensagem</button>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+    
+
+{% endblock %}

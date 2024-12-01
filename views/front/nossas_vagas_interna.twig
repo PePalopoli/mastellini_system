@@ -1,0 +1,99 @@
+{% set menu_selectd = "vagas" %}
+{% extends 'front/layout.twig' %}
+
+{% block content %}
+
+<section class="trabalhe-conosco" data-scroll-index='1'>
+    <div class="secao-interna-trabalhe-conosco">
+        <div class="container">
+            <div class="row">
+                
+
+
+                
+
+                <div class="cabecalho-interna-trabalhe-conosco bloco-formulario2">
+                    <div class="col-md-6 col-lg-6 col-12 titulo-trabalhe-conosco">
+                        <h2>Trabalhe conosco</b></h2>
+
+                        <p>O Grupo Mastellini está sempre em busca de talentos para o seu time. Preencha seus dados no formulário abaixo e envie para participar do processo seletivo para a vaga escolhida.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-12 col-lg-12 col-12  box-vaga">
+                    <div class="div-nome-vaga-interna">
+                        <h2>{{vagas.vaga|raw}}: {{vagas.body|raw}}</h2>
+                    </div>                    
+                </div>
+
+
+                <div class="div-formulario-busca-vaga">
+                    <form action="{{path('web_nossas_vagas_uma_send')}}" method="post" enctype="multipart/form-data">
+                    <input type="hidden" name="iURL" id="iURL" value="{{vagas.url}}">
+                    <input type="hidden" name="iVagaSelecionada" id="iVagaSelecionada" value="{{vagas.vaga|raw}}">
+                        <div class="form-row">
+                            <div class="form-group col-md-5 col-lg-5 col-12">
+                                <label for="iName">Nome:<span>*</span></label>
+                                <input type="text" class="form-control" id="iName" name="iName">
+                            </div>
+
+                            <div class="form-group col-md-3 col-lg-3 col-12">
+                                <label for="iTelefone">Telefone/Celular:<span>*</span></label>
+                                <input type="text" class="form-control" id="iTelefone" name="iTelefone">
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4 col-12">
+                                <label for="iEmail">Email:<span>*</span></label>
+                                <input type="text" class="form-control" id="iEmail" name="iEmail">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group col-md-2 col-lg-2 col-12">
+                                <label for="iEstado">Estado:<span>*</span></label>
+                                <select id="iEstado" name="iEstado"  class="form-control">
+                                    <option selected value="SP">SP</option>
+                                    <option value="ES">ES</option>
+                                </select>
+                            </div>
+                            <div class="form-group col-md-4 col-lg-4 col-12">
+                                <label for="iCidade">Cidade:<span>*</span></label>
+                                <input type="text" class="form-control" id="iCidade" name="iCidade">
+                            </div>
+                            <div class="form-group col-md-6 col-lg-6 col-12">
+                                <label for="iFile">Curriculo<span>*</span></label>
+                                <input class="form-control" type="file" id="iFile" name="iFile">
+                            </div>
+
+
+
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group col-md-12 col-lg-12 col-12">
+                                <label for="iMsg">Mensagem:<span>*</span></label>
+                                <textarea class="form-control" id="iMsg" name="iMsg" rows="10"></textarea>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary">Enviar mensagem</button>
+                    </form>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+
+
+
+
+
+
+
+
+
+    
+
+{% endblock %}
